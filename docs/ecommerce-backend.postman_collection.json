@@ -1,0 +1,793 @@
+{
+	"info": {
+		"_postman_id": "6d2d7470-2736-4d0e-b904-1e08c964adfa",
+		"name": "ecommerce-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26809042",
+		"_collection_link": "https://www.postman.com/lively-resonance-328441/workspace/opensource/collection/26809042-6d2d7470-2736-4d0e-b904-1e08c964adfa?action=share&source=collection_link&creator=26809042"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "my-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/leon/users/profiles/me/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"leon",
+								"users",
+								"profiles",
+								"me",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/users/profiles/me/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"users",
+										"profiles",
+										"me",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:04:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "362"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"status_code\": 401,\n    \"has_warning\": false,\n    \"exception_status\": true,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [\n            {\n                \"not_authenticated\": \"Authentication credentials were not provided.\"\n            }\n        ],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {}\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\",\n        \"WWW-Authenticate\": \"Bearer realm=\\\"api\\\"\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/users/profiles/me/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"users",
+										"profiles",
+										"me",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:15:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "368"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"has_warning\": false,\n    \"exception_status\": false,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {\n            \"id\": 1,\n            \"username\": \"9301422310\",\n            \"last_login\": \"2023-11-29T23:06:34.783993Z\",\n            \"date_joined\": \"2023-11-29T22:31:57.754201Z\"\n        }\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "9301422310",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "nvd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/leon/auth/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"leon",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "nvd",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "nvd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:05:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"status_code\": 401,\n    \"has_warning\": false,\n    \"exception_status\": true,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [\n            {\n                \"no_active_account\": \"No active account found with the given credentials\"\n            }\n        ],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {}\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\",\n        \"WWW-Authenticate\": \"Bearer realm=\\\"api\\\"\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "9301422310",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "nvd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:06:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "805"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"has_warning\": false,\n    \"exception_status\": false,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {\n            \"refresh\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMzg5MTE5NCwiaWF0IjoxNzAxMjk5MTk0LCJqdGkiOiI1ODY2MTU5NmNlZjg0YjE2OWE0N2UxNTZiNDAwZDBkNyIsImlkIjoxfQ.xubWr8n1Azkn-gP08bYHsI-2guALffCg8JHS32HxVp5HnqkPAnzLHGxWctI-pyvcGQ2tq5fvCeenyS8dRF9Ikg\",\n            \"access\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjk5Mzc0LCJpYXQiOjE3MDEyOTkxOTQsImp0aSI6IjI4NzllOTI4YzExNjQ1MzJhOWIxYjI0YTkzOGE2N2YwIiwiaWQiOjF9.Ah44T5HvoFBjnHc_a4eXNMSo4g3SqoS1SfZ77KQQBb_vax_1ESKS4ZSYasYrzj-mtRkcJtu2xR6dy1EtT1Sd0A\"\n        }\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "referesh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMzg5MTE5NCwiaWF0IjoxNzAxMjk5MTk0LCJqdGkiOiI1ODY2MTU5NmNlZjg0YjE2OWE0N2UxNTZiNDAwZDBkNyIsImlkIjoxfQ.xubWr8n1Azkn-gP08bYHsI-2guALffCg8JHS32HxVp5HnqkPAnzLHGxWctI-pyvcGQ2tq5fvCeenyS8dRF9Ikg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/leon/auth/login/refresh/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"leon",
+								"auth",
+								"login",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "referesh",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/refresh/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:13:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"status_code\": 400,\n    \"has_warning\": false,\n    \"exception_status\": true,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [\n            {\n                \"required\": \"This field is required.\"\n            }\n        ],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {}\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "refresh",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMzg5MTE5NCwiaWF0IjoxNzAxMjk5MTk0LCJqdGkiOiI1ODY2MTU5NmNlZjg0YjE2OWE0N2UxNTZiNDAwZDBkNyIsImlkIjoxfQ.xubWr8n1Azkn-gP08bYHsI-2guALffCg8JHS32HxVp5HnqkPAnzLHGxWctI-pyvcGQ2tq5fvCeenyS8dRF9Ikg",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/refresh/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:14:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "526"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"has_warning\": false,\n    \"exception_status\": false,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {\n            \"access\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjk5ODQ2LCJpYXQiOjE3MDEyOTkxOTQsImp0aSI6IjdmZjUxMzE0Zjk2NzRiNDc4MjliNGZmNDcwNmUwYjllIiwiaWQiOjF9.L0WAqhH3JkF6ecNEHuhcFd1FKXr02gFdyWj47ofYZQqrLUWyQRAQsAtVAIEDOMJJ1d73MFFdXvQz__skIMM5vA\"\n        }\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "has-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjk5ODQ2LCJpYXQiOjE3MDEyOTkxOTQsImp0aSI6IjdmZjUxMzE0Zjk2NzRiNDc4MjliNGZmNDcwNmUwYjllIiwiaWQiOjF9.L0WAqhH3JkF6ecNEHuhcFd1FKXr02gFdyWj47ofYZQqrLUWyQRAQsAtVAIEDOMJJ1d73MFFdXvQz__skIMM5v",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/leon/auth/login/try/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"leon",
+								"auth",
+								"login",
+								"try",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjk5ODQ2LCJpYXQiOjE3MDEyOTkxOTQsImp0aSI6IjdmZjUxMzE0Zjk2NzRiNDc4MjliNGZmNDcwNmUwYjllIiwiaWQiOjF9.L0WAqhH3JkF6ecNEHuhcFd1FKXr02gFdyWj47ofYZQqrLUWyQRAQsAtVAIEDOMJJ1d73MFFdXvQz__skIMM5vA",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/try/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										"try",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:16:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"has_warning\": false,\n    \"exception_status\": false,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {}\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\"\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjk5ODQ2LCJpYXQiOjE3MDEyOTkxOTQsImp0aSI6IjdmZjUxMzE0Zjk2NzRiNDc4MjliNGZmNDcwNmUwYjllIiwiaWQiOjF9.L0WAqhH3JkF6ecNEHuhcFd1FKXr02gFdyWj47ofYZQqrLUWyQRAQsAtVAIEDOMJJ1d73MFFdXvQz__skIMM5v",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/leon/auth/login/try/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"leon",
+										"auth",
+										"login",
+										"try",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 23:16:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "380"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Vary",
+									"value": "origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"status_code\": 401,\n    \"has_warning\": false,\n    \"exception_status\": true,\n    \"messages\": {\n        \"info\": [],\n        \"warning\": [],\n        \"error\": [\n            {\n                \"token_not_valid\": \"Token is invalid or expired\"\n            },\n            {\n                \"token_not_valid\": \"token_not_valid\"\n            }\n        ],\n        \"log\": [],\n        \"exception\": []\n    },\n    \"monitor\": {},\n    \"many\": false,\n    \"data\": {\n        \"result\": {}\n    },\n    \"headers\": {\n        \"Content-Type\": \"text/html; charset=utf-8\",\n        \"WWW-Authenticate\": \"Bearer realm=\\\"api\\\"\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
