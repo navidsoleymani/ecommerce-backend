@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'nested_inline',
 
     'users.apps.UsersConfig',
+
+    'product',
+    'order',
+    'cart'
 ]
 
 MIDDLEWARE = [
