@@ -6,29 +6,29 @@ from product.serializer import ProductSerializer
 
 
 class ProductCreateView(CreateAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ProductSerializer
-    permission_classes = permissions.IsAuthenticated
 
 
 class ProductListView(ListAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ProductSerializer
-    permission_classes = permissions.IsAuthenticated
     queryset = Product.objects.all()
 
 
 class ProductRetrieveView(RetrieveAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ProductSerializer
-    permission_classes = permissions.IsAuthenticated
     queryset = Product.objects.all()
 
 
 class ProductUpdateView(UpdateAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ProductSerializer
-    permission_classes = permissions.IsAuthenticated
     queryset = Product.objects.all()
 
 
 class ProductDeleteView(DestroyAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ProductSerializer
-    permission_classes = permissions.IsAuthenticated
     queryset = Product.objects.all()
