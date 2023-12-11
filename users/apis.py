@@ -1,7 +1,7 @@
 from .repo.apis.auth import (
+    RegisterAPI,
     LoginAPI,
-    HasLoginAPI,
-    RefreshLoginAPI,
+    LogoutAPI,
 )
 from .repo.apis.user import (
     GetMyProfileInformationAPI,
