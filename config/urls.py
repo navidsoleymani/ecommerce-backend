@@ -21,6 +21,7 @@ urlpatterns = (
                 include("config.repo.swagger.v1.urls"),
             ),
             path("api/v1/" + PROJECT_NAME_URL_PARAM + "/", include("config.repo.urls.v1")),
+            path('products/', include('product.urls')),
         ]
         + static(STATIC_URL, document_root=STATIC_ROOT)
         + static(MEDIA_URL, document_root=MEDIA_ROOT)
